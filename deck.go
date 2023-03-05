@@ -34,10 +34,21 @@ func newDeck() deck {
 
 func (d deck) print()  {
     for i, card := range d {
-        fmt.Println(i, card)
+        fmt.Println(i, []byte(card))
     } 
+}
+
+func (d deck) toString() string {
+    cards := ""
+
+    for _, card := range d {
+       cards += card + " " 
+    }
+
+    return cards
 }
 
 func deal(d deck, handSize int) (deck, deck)  {
     return d[:handSize], d[handSize:]
 }
+
