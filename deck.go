@@ -1,8 +1,9 @@
 package main
 
 import (
-	"fmt"
-	"strings"
+    "fmt"
+    "io/ioutil"
+    "strings"
 )
 
 // Create a new type of deck
@@ -39,6 +40,10 @@ func (d deck) print()  {
     for i, card := range d {
         fmt.Println(i, []byte(card))
     } 
+}
+
+func (d deck) saveToFile(filename string) error {
+    return ioutil.WriteFile(filename, []byte(d.toString()), 0666) 
 }
 
 func (d deck) toString() string {
