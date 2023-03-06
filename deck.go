@@ -20,7 +20,7 @@ func newDeck() deck {
         "Spades",
         "Hearts",
         "Diamonds",
-        "Club",
+        "Clubs",
     }
 
     cardValues := []string{
